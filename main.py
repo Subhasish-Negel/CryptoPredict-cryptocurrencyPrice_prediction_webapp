@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas_datareader as pdr
 import pandas as pd
-from prophet import Prophet
-from prophet.plot import plot_plotly as pplt
+# from prophet import Prophet
+# from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
 
