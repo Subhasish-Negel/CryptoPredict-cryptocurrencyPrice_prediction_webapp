@@ -1,5 +1,4 @@
 pandas
 pandas_datareader
-plotly==5.6.0
-fbprophet
+plotly
 streamlit==1.9.0
