@@ -1,7 +1,0 @@
-streamlit==
-numpy==
-pandas==
-pandas-datareader==
-plotly==
-pystan==2.19.1.1
-fbprophet
