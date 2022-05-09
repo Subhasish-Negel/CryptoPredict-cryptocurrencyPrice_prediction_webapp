@@ -36,7 +36,7 @@ st.write(data.tail(7))
 
 def plot_raw_date():
     fig = go.Figure()
-    fig.add_trace(go.Bar(x=data['Date'], y=data['Adj Close'], name='Adj Close Price'))
+    fig.add_trace(go.Scatter(x=data['Date'], y=data['Adj Close'], name='Adj Close Price'))
     fig.layout.update(title_text='Time Series Data', xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
 
