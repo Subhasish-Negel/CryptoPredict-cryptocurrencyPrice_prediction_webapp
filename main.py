@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.graph_objs as go
 
 
-st.title('Bitcoin Prediction App:')
+st.title('Bitcoin Price History & Prediction App:')
 
 stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD']
 selected_stocks = st.selectbox("Select Your Cryptocurrency", stocks)
