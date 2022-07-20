@@ -8,7 +8,7 @@ import plotly.graph_objs as go
 
 st.title('Bitcoin Price History & Prediction App:')
 
-stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD']
+stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD', 'SOL-USD']
 selected_stocks = st.selectbox("Select Your Cryptocurrency", stocks)
 
 START = st.date_input('Start', value=pd.to_datetime("2017-01-01"))
