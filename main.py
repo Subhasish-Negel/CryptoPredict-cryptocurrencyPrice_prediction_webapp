@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas_datareader as pdr
 import pandas as pd
-from prophet import Prophet
-from prophet.plot import plot_plotly as pplt
+# from prophet import Prophet
+# from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
 
@@ -43,29 +43,29 @@ def plot_raw_date():
 
 plot_raw_date()
 
-Forecasting
+# # Forecasting
 
-df_train = data[['Date', 'Close']]
-df_train = df_train.rename(columns={'Date': 'ds', 'Close': 'y'})
+# df_train = data[['Date', 'Close']]
+# df_train = df_train.rename(columns={'Date': 'ds', 'Close': 'y'})
 
-model = Prophet()
-model.fit(df_train)
+# model = Prophet()
+# model.fit(df_train)
 
-future = model.make_future_dataframe(periods=period)
-forecast = model.predict(future)
+# future = model.make_future_dataframe(periods=period)
+# forecast = model.predict(future)
 
-st.subheader('Raw Predicted Data')
-st.write(forecast.tail(10))
+# st.subheader('Raw Predicted Data')
+# st.write(forecast.tail(10))
 
 
-# Plotting predicted data
+# # Plotting predicted data
 
-st.subheader('Predicted Graph:')
-fig1 = pplt(model, forecast)
-st.plotly_chart(fig1)
+# st.subheader('Predicted Graph:')
+# fig1 = pplt(model, forecast)
+# st.plotly_chart(fig1)
 
-# Seasonality Check
+# # Seasonality Check
 
-st.subheader('Price Seasonality Check:')
-fig2 = model.plot_components(forecast)
-st.write(fig2)
+# st.subheader('Price Seasonality Check:')
+# fig2 = model.plot_components(forecast)
+# st.write(fig2)
