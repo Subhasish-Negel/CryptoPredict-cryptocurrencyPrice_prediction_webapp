@@ -11,4 +11,4 @@
 **Hooray! Now FB Prophet is supported on streamlit server, rearranging the versions on the 'requirements.txt' helped me**
 **If anyone facing problme regarding hosting site on streamlit / heroku when using Prophet, please go through the requirements.txt & match your library versions with it**
 
-##Happy Developing :)
+## Happy Developing :)
