@@ -4,3 +4,11 @@
 **Note: As Facebook Prophet can't be installed both on streamlit share and heroku server, the webapp deployment only contains chart on price history, maybe I will use scikit-learn instead of facebook prophet in future, I'll update the main.py then :(**
 
 ## Happy Learning :)
+
+
+## Update 1
+
+**Hooray! Now FB Prophet is supported on streamlit, rearranging the versions on the 'requirements.txt' helped me**
+**If anyone facing problme regarding hosting site on streamlit / heroku, please go through the requirements.txt & match your library versions with it**
+
+##Happy Developing :)
