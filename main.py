@@ -6,7 +6,7 @@ from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
 
-st.title('Bitcoin Price History & Prediction App:')
+st.title('Crypto Currency Price History & Prediction App:')
 
 stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD', 'SOL-USD']
 selected_stocks = st.selectbox("Select Your Cryptocurrency", stocks)
