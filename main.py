@@ -30,7 +30,7 @@ data_load_state = st.text("Loading Data...")
 data = load_data(selected_stocks)
 data_load_state.text('Loading Data...Done!')
 
-
+data['Date'] = data['Date'].dt.date
 st.subheader('Raw Data(Last 7 Days):')
 st.write(data.tail(7))
 
@@ -55,8 +55,9 @@ model.fit(df_train)
 future = model.make_future_dataframe(periods=period)
 forecast = model.predict(future)
 
+forecast['ds'] = forecast['ds'].dt.date
 st.subheader('Raw Predicted Data')
-st.write(forecast.tail(10))
+st.table(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(8))
 
 
 # Plotting predicted data
