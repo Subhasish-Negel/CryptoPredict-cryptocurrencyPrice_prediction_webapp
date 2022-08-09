@@ -32,9 +32,6 @@ data = load_data(selected_stocks)
 data_load_state.text('Loading Data...Done!')
 
 
-# Printing RAW Data
-
-data['Date'] = data['Date'].dt.date
 st.subheader('Raw Data(Last 7 Days):')
 st.write(data.tail(7))
 
