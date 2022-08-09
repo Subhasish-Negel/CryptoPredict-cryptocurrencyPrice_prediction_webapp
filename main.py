@@ -6,6 +6,7 @@ from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
 
+st.set_page_config(layout="wide")
 st.title('Crypto Currency Price History & Prediction App:')
 
 stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD', 'SOL-USD']
@@ -30,6 +31,10 @@ data_load_state = st.text("Loading Data...")
 data = load_data(selected_stocks)
 data_load_state.text('Loading Data...Done!')
 
+
+# Printing RAW Data
+
+data['Date'] = data['Date'].dt.date
 st.subheader('Raw Data(Last 7 Days):')
 st.write(data.tail(7))
 
