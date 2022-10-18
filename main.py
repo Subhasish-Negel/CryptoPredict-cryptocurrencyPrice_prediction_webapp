@@ -5,7 +5,7 @@ from prophet import Prophet
 from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
-st.set_page_config(page_title='CryptoPredict', page_icon=':chart_with_upwards_trend:')
+st.set_page_config(page_title='CryptoPredict', page_icon=':chart_with_upwards_trend:', layout = 'wide')
 st.title('Crypto Currency Price History & Prediction App:')
 
 stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD', 'SOL-USD']
