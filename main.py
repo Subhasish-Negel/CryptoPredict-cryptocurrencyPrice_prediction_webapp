@@ -5,14 +5,12 @@ from prophet import Prophet
 from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
-st.set_page_config(page_title='CryptoPredict', page_icon=':chart_with_upwards_trend:', layout='wide')
-
-
-st.title('CryptoPredict: Crypto Currency Price History & Prediction App:')
+st.set_page_config(page_title='CryptoPredict', page_icon=':chart_with_upwards_trend:')
+st.title('CryptoPredict')
+st.subheader('Crypto Currency Price History & Prediction App')
 
 stocks = ['BTC-USD', 'ETH-USD', 'YFI-USD', 'WBTC-USD', 'PAXG-USD', 'SOL-USD']
 selected_stocks = st.selectbox("Select Your Cryptocurrency", stocks)
-st.subheader('Select The Date Range for Training Dataset')
 
 START = st.date_input('Start', value=pd.to_datetime("2017-01-01"))
 TODAY = st.date_input('End(Today)', value=pd.to_datetime("today"))
@@ -34,25 +32,18 @@ data = load_data(selected_stocks)
 data_load_state.text('Loading Data...Done!')
 
 
+st.subheader('Raw Data(Last 7 Days):')
+st.write(data.tail(7))
 
 
 def plot_raw_date():
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Adj Close Price'))
-    fig.layout.update(title_text='Time Series Data', xaxis_rangeslider_visible=False)
+    fig.layout.update(title_text='Time Series Data', xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
 
-st.subheader('Raw Data(Last 7 Days):')
 
-
-left_col, right_col = st.columns(2)
-with left_col:
-    plot_raw_date()
-with right_col:
-    st.markdown('##')
-    st.markdown('##')
-    st.markdown('##')
-    st.write(data.tail(7))
+plot_raw_date()
 
 # Forecasting
 
@@ -65,7 +56,6 @@ model.fit(df_train)
 future = model.make_future_dataframe(periods=period)
 forecast = model.predict(future)
 
-
 st.subheader('Raw Predicted Data')
 st.table(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(8))
 
@@ -73,12 +63,8 @@ st.table(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(8))
 # Plotting predicted data
 
 
-col1, col2, col3 = st.columns(3)
-
-with col2:
-    st.subheader('Predicted Graph:')
-    fig1 = pplt(model, forecast)
-    st.plotly_chart(fig1)
+fig1 = pplt(model, forecast)
+st.plotly_chart(fig1)
 
 # Seasonality Check
 
