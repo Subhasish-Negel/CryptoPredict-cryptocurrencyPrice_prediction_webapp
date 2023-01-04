@@ -1,5 +1,6 @@
 import streamlit as st
-import pandas_datareader as pdr
+from pandas_datareader import data as pdr
+import yfinance as yf
 import pandas as pd
 from prophet import Prophet
 from prophet.plot import plot_plotly as pplt
@@ -22,6 +23,7 @@ period = n_years * 1
 
 @st.cache
 def load_data(ticker):
+    yf.pdr_override()
     data = pdr.get_data_yahoo(ticker, start=START, end=TODAY)
     data.reset_index(inplace=True)
     return data
