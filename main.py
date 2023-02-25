@@ -21,6 +21,7 @@ n_years = st.slider("", 1, 180)
 period = n_years * 1
 
 
+
 @st.cache
 def load_data(ticker):
     yf.pdr_override()
