@@ -6,6 +6,7 @@ from prophet import Prophet
 from prophet.plot import plot_plotly as pplt
 import plotly.graph_objs as go
 
+
 st.set_page_config(page_title='CryptoPredict', page_icon=':chart_with_upwards_trend:')
 st.title('CryptoPredict')
 st.subheader('Crypto Currency Price History & Prediction App')
