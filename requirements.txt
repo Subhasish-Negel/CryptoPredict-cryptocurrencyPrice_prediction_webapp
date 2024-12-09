@@ -1,4 +1,5 @@
 prophet 
+numpy
 pystan==2.19.1.1
 streamlit ~= 1.19.0
 pandas == 1.3.4
